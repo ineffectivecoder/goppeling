@@ -6,3 +6,14 @@ Instead of stomping all over the resulting dll, we generate code in go lang so t
 - Dump import table of executable
 - Dump export table of dll
 - Compare tables, match functions, generate go code for DLL hijack opportunities
+
+
+## Usage
+./goppeling -h  
+Usage of ./goppeling:  
+  -dir string  
+        Output Go dir for stubs (default ".")  
+  -dll string  
+        Path to DLL to parse exports  
+  -exe string
+        Path to EXE to parse imports  

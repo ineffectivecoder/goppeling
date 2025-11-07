@@ -9,7 +9,7 @@ Instead of stomping all over the resulting dll, we generate code in go lang so t
 
 
 ## Usage
-./goppeling -h  
+```./goppeling -h  
 Usage of ./goppeling:  
   -dir string  
         Output Go dir for stubs (default ".")  
@@ -17,3 +17,4 @@ Usage of ./goppeling:
         Path to DLL to parse exports  
   -exe string
         Path to EXE to parse imports  
+```

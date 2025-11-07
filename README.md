@@ -1,6 +1,8 @@
 # goppeling
 ![Goppel goppel goppel](goppel.png)
 golang implementation of koppeling  
+Facilitates the investigation of DLL hijacks by listing the import table of a given EXE and the export table of a given DLL.
+If both are provided, it will prompt with which function you'd like to hijack. The resulting file includes all functions as exports with the one selected executing the "main" function.
 Instead of stomping all over the resulting dll, we generate code in golang so that you can modify whatever exports of the DLL you would like  
 ## Features
 - Dump import table of executable

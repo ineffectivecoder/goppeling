@@ -86,8 +86,6 @@ func rvaToOffset(data []byte, sections []Section, rva uint32) (int, error) {
 	return 0, fmt.Errorf("RVA 0x%x did not match any section", rva)
 }
 
-// ---------------------- DLL EXPORTS ----------------------
-
 func parseDllExport(dllPath string) (map[string]bool, error) {
 	fmt.Printf("[+] Parsing DLL Export Table: %s\n", dllPath)
 	data, err := readFile(dllPath)
@@ -169,8 +167,6 @@ func parseDllExport(dllPath string) (map[string]bool, error) {
 
 	return exports, nil
 }
-
-// ---------------------- EXE IMPORTS ----------------------
 
 func parseExeImport(exePath string) (map[string][]string, map[string]bool, error) {
 	fmt.Printf("[+] Parsing EXE Import Table: %s\n", exePath)
@@ -317,8 +313,6 @@ func parseExeImport(exePath string) (map[string][]string, map[string]bool, error
 	return importsByDLL, importedNames, nil
 }
 
-// ---------------------- GENERATE NO-OP GO STUB ----------------------
-
 func generateGoStub(matches []string, outFile string) error {
 	f, err := os.Create(outFile)
 	if err != nil {
@@ -342,8 +336,6 @@ func generateGoStub(matches []string, outFile string) error {
 	}
 	return nil
 }
-
-// ---------------------- MAIN ----------------------
 
 func main() {
 	dllPath := flag.String("dll", "", "Path to DLL to parse exports")

@@ -19,8 +19,6 @@ type Section struct {
 	SizeOfRawData  uint32
 }
 
-// --- Utility functions ---
-
 func readFile(path string) ([]byte, error) {
 	return os.ReadFile(path)
 }
